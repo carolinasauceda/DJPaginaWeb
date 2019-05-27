@@ -1,0 +1,42 @@
+{% extends "croco/base.html "%}
+{% load static %}
+
+{% block titulo %}Estas a punto de comprar!{% endblock %}
+
+{% block estilos %}{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+{% block contenido %}
+<br>
+<br>
+<br>
+<br>
+<center>
+<div style="float:left; margin:4px 100px;">
+<b><h4>Tu compra esta casi lista!</h4></b>
+<form style="width:150%;" method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+
+	</div>
+    <div style=" margin:50px 120px; background-color:white; width:50%;
+border-radius:12px;
+color:black; float:right;">
+        <br>
+        <br>
+        <p><b>Producto que vas a comprar:</b>{{objeto.nombre}}</p>
+        <p><b>Precio:</b>${{objeto.precio}}MX</p>
+        <button type="submit" class="btn btn-outline-danger" onclick="#">Continuar</button>
+	<a class= "btn btn-primary" href="{% url 'Tienda' %}">Cancelar</a>
+        <br>
+        <br>
+    </div>
+</center>
+</form>
+
+
+
+{% endblock %}

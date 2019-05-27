@@ -1,0 +1,37 @@
+{% extends "croco/base.html "%}
+{% load static %}
+
+{% block titulo %}Estas a punto de comprar!{% endblock %}
+
+{% block estilos %}{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+{% block contenido %}
+<div style="float:right;  margin:110px 90px; background-color:green; width:50%;
+border-radius:12px;
+color:white;">
+	<br>
+	<br>
+	<img style="float:left; margin:10px;" src="{{ Compra.imagen }}" width="400" heigh="400"/>
+	<br>
+	<br>
+	<h4><b>Producto:</b><i>{{ Compra.nombre }}</i></h4>
+	<h4><b>Precio:</b><i> ${{ Compra.precio }}MX</i></h4>
+	<h5><b>Descripcion:</b><i>{{ Compra.descripcion }}</i></h5>
+	<br>
+	<center><p><button class="btn btn-secondary" onclick="location.href='{% url 'registro' code=Compra.codigo %}'">Comprar</button></p></center>
+	<br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<img style="float:left; margin:40px;" src="{% static 'imagenes/croco.png'%}" width="400" heigh="400"/>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

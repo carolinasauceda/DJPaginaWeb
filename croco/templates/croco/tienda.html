@@ -1,0 +1,50 @@
+{% extends "croco/base.html "%}
+{% load static %}
+
+{% block titulo %}CrocoChocoLoco Online{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tienda.css'%}">
+
+{% endblock %}
+
+{% block banner %}
+<br>
+<br>
+<center><img src="{% static 'imagenes/banner3.png'%}"></center>
+
+{% endblock %}
+{% block contenido %}
+
+
+{% for objeto in Venta %}
+    <div style="float:left;background-color:red">
+
+        <center>
+
+        <p><img src="{{objeto.imagen}}" width="200" heigh="200"></p>
+        <p><b>{{objeto.nombre}}</b></p>
+        <p><i>${{objeto.precio}}MX</i></p>
+            <p><button class="btn btn-secondary" onclick="location.href='{% url 'Detalles' codigo=objeto.codigo %}'">Mas detalles</button></p>
+        </center>
+    </div>
+    <div style="float:right;">
+        <center>
+        <p><img src="{{objeto.imagen}}" width="200" heigh="200"></p>
+        <p><b>{{objeto.nombre}}</b></p>
+        <p><i>${{objeto.precio}}MX</i></p>
+            <p><button class="btn btn-secondary" onclick="location.href='{% url 'Detalles' codigo=objeto.codigo %}'">Mas detalles</button></p>
+        </center>
+
+    </div>
+{% endfor %}
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+{% endblock %}

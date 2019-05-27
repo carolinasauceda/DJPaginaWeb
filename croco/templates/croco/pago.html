@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block titulo %}Casi listo!{% endblock %}
+
+{% block contenido %}
+<div style="margin:80px 100px;
+background-color:yellow;
+width:50%;
+border-radius:12px;
+color:black;">
+    <center><strong>CURP:</strong> {{ cliente.id }} </center>
+    <center><strong>Nombre:</strong> {{ cliente.nombre }} </center>
+    <center><strong>Apellido:</strong> {{ cliente.apellido }} </center>
+    <center><strong>Correo:</strong> {{ cliente.email }} </center>
+    <center><strong>Telefono:</strong> {{ cliente.telefono }} </center>
+    <center><strong>Direccion:</strong> {{ cliente.direccion }} </center>
+    <center><strong>Total a pagar:</strong>{{object.precio}}</center>
+
+</div>
+
+{% endblock %}
